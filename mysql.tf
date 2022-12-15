@@ -5,13 +5,13 @@ resource "aws_db_instance" "mysql" {
   instance_class       = "db.t3.micro"
   username             = "admin1"
   password             = "RoboShop1"
-  parameter_group_name = ????
+  parameter_group_name = aws_db_parameter_group.mysql-pg.name
   skip_final_snapshot  = true
 }
 
 
-resource "aws_db_parameter_group" "default" {
-  name   = "rds-pg"
+resource "aws_db_parameter_group" "mysql-pg" {
+  name   = "roboshop-mysql-pg-${var.ENV}"
   family = "mysql5.6"
 }
 
