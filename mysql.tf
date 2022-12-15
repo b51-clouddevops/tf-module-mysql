@@ -8,6 +8,7 @@ resource "aws_db_instance" "mysql" {
   parameter_group_name = aws_db_parameter_group.mysql-pg.name
   skip_final_snapshot  = true
   db_subnet_group      = aws_db_subnet_group.mysql-subnet-grp.name
+  vpc_security_groups  = [aws_security_group.allows_mysql.id] 
 }
 
 
