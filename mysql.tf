@@ -9,6 +9,12 @@ resource "aws_db_instance" "mysql" {
   skip_final_snapshot  = true
 }
 
+
+resource "aws_db_parameter_group" "default" {
+  name   = "rds-pg"
+  family = "mysql5.6"
+}
+
 # # Creates Elastic Cache Cluster
 # resource "aws_elasticache_cluster" "redis" {
 #   cluster_id           = "roboshop-redis-${var.ENV}"
