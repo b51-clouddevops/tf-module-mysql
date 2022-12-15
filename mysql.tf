@@ -7,6 +7,7 @@ resource "aws_db_instance" "mysql" {
   password             = "RoboShop1"
   parameter_group_name = aws_db_parameter_group.mysql-pg.name
   skip_final_snapshot  = true
+  db_subnet_group      = "aws_db_subnet_group" "mysql-subnet-grp
 }
 
 
@@ -16,7 +17,7 @@ resource "aws_db_parameter_group" "mysql-pg" {
 }
 
 # Creates Subnet Group
-resource "aws_db_subnet_group" "default" {
+resource "aws_db_subnet_group" "mysql-subnet-grp" {
   name       =  "mysql-subnet-grp-${var.ENV}
   subnet_ids = [data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_ID]
 
