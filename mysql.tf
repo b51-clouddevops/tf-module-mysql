@@ -19,7 +19,7 @@ resource "aws_db_parameter_group" "mysql-pg" {
 
 # Creates Subnet Group
 resource "aws_db_subnet_group" "mysql-subnet-grp" {
-  name       =  "mysql-subnet-grp-${var.ENV}
+  name       =  "mysql-subnet-grp-${var.ENV}"
   subnet_ids = [data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_ID]
 
   tags = {
