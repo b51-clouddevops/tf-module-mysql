@@ -14,7 +14,7 @@ resource "aws_db_instance" "mysql" {
 
 resource "aws_db_parameter_group" "mysql-pg" {
   name   = "roboshop-mysql-pg-${var.ENV}"
-  family = "mysql5.6"
+  family = "mysql5.7"
 }
 
 # Creates Subnet Group
