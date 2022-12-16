@@ -5,7 +5,7 @@ cd /tmp
 curl -s -L -o /tmp/mysql.zip "https://github.com/stans-robot-project/mysql/archive/main.zip"
 unzip -o mysql.zip 
 cd mysql-main 
-
+mysql -h  mysqlDB_Address -uUserName  -pPassword   <shipping.sql
 
 
 EOF 
