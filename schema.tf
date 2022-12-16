@@ -1,6 +1,9 @@
 # Loads the My-SQL schema
 resource "null_resource" "mysql-schema" { 
 
+  # This ensures that schema will load only after the creation of MySQL RDS
+  depends_on = [aws_docdb_cluster.docdb]
+
   provisioner "local-exec" {
     command = <<EOF
     cd /tmp 
