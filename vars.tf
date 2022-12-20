@@ -2,7 +2,8 @@ variable "ENV" {}
 
 variable "RDS_MYSQL_PORT" {}
 variable "RDS_MYSQL_STORAGE" {}
-variable ""
+variable "RDS_MYSQL_ENGINE_VERSION" {}
+variable "RDS_MYSQL_INSTANCE_CLASS" {}
 
 RDS_MYSQL_PORT           = 3306
 RDS_MYSQL_STORAGE        = 10
