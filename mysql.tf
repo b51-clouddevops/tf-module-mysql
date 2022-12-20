@@ -1,4 +1,5 @@
 resource "aws_db_instance" "mysql" {
+  identifier              
   allocated_storage       = 10
   engine                  = "mysql"
   engine_version          = "5.7"
